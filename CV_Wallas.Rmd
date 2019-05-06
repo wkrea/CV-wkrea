@@ -1,0 +1,76 @@
+---
+name: William J. Trigos G.
+address: |
+        Conjunto Residencial
+        Coomultrasan Provenza\ 
+        Bloque 6A Apto 301
+phone: (+57)323 415 7471 -- (+57)323 415 7471
+profilepic: ./Imgs/mariecurie.jpg
+www: wkrea.github.io
+email: "william.trigos@gmail.com"
+github: malliwi88
+linkedin: william-trigos-81526260
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Soy una persona creativa, responsable, comprometida con mis labores y mi formación profesional, preocupado por la innovación en pro del desarrollo y mejoramiento continuo. \n En cuanto a mis aptitudes profesionales, tengo un buen nivel en cuanto al manejo de herramientas ofimáticas y algunos lenguajes de programación y modelado."
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{flushleft}}
+  - \posttitle{\end{flushleft}}
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+---
+<!--
+  vitae::twentyseconds 
+
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+-->
+
+<style>
+body {
+text-align: justify}
+</style>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(vitae)
+library(tidyverse)
+library(knitr)
+library(knitr)
+library(kableExtra)
+
+#install.packages("RCurl")
+require(RCurl)
+#### Estudios #####
+urlEstudios <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiXGPtFVJmUMLFBnLhyefdd7ZRMTvRSJKNDAXVa5Q6J3Q5lrZp9Eodr6JwnH9JcwNtHg7XkEaSBIl4/pub?gid=414148078&single=true&output=csv"
+conEstudios <- textConnection( getURL( urlEstudios ) )
+dataEstudios <- read.csv( conEstudios )
+
+#### publications #####
+
+```
+
+
+# Some stuff about me
+
+ * I poisoned myself doing research.
+ * I was the first woman to win a Nobel prize
+ * I was the first person and only woman to win a Nobel prize in two different sciences.
+
+
+## Grants and Awards {.grants .nohead}
+```{r}
+dataEstudios %>% 
+  filter(Icono == '\\faGraduationCap') %>% 
+  arrange(desc(FechaFin), Carrera) %>% 
+  mutate(what = sprintf("%s, %s\\n\\t %s\\n\\t %s", Carrera, Universidad, Ubicacion, Conocimientos)) %>%
+  select(FechaIni, what) %>% 
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+<!-- 
+str_c(Carrera, ", ", Universidad)) %>%     #
+-->

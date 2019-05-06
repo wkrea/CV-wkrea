@@ -1,0 +1,145 @@
+---
+#title: "William J. Trigos  <br> Curriculum vitae"
+name: William J. Trigos G.
+author: William Trigos
+address: |
+        Conjunto Residencial
+        Coomultrasan Provenza\ 
+        Bloque 6A Apto 301
+phone: (+57)323 415 7471 -- (+57)323 415 7471
+profilepic: ./Imgs/mariecurie.jpg
+www: wkrea.github.io
+email: "william.trigos@gmail.com"
+github: malliwi88
+linkedin: william-trigos-81526260
+date: "Actualizado: `r format(Sys.time(), '%B %Y')`"
+output:
+  pagedown::html_paged:
+    # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
+    self_contained: false
+    # CDN:
+    css: [cv_wallas.css, pie_chart.css, "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css", "https://use.fontawesome.com/releases/v5.7.2/css/all.css"]
+    # offline:
+    #css: [professional_cv.css, "bootstrap-4.0.0-dist/css/bootstrap-grid.min.css", "fontawesome-free-5.8.1-web/css/all.css"]
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+require(RCurl)
+library(RCurl)
+library(tidyverse)
+library(knitr)
+
+cv_data <- read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRiXGPtFVJmUMLFBnLhyefdd7ZRMTvRSJKNDAXVa5Q6J3Q5lrZp9Eodr6JwnH9JcwNtHg7XkEaSBIl4/pub?output=csv")
+
+#### create publications table #####
+publications <- readxl::read_xlsx("./cv_data/publications.xlsx")
+
+```
+
+
+<div class="row pageone">
+<div class="col-8">
+  <h1 class="center">William J. Trigos</h1>
+
+http://cssdeck.com/labs/css3-pie-chart
+https://github.com/RLesur/weasydoc
+
+# Formación {.education}
+```{r}
+cv_data %>% 
+  filter(type == 'education') %>% 
+  mutate(Formación = str_c(what, ", ", where)) %>% 
+  mutate(Periodo = str_c(year_begin, " --- ", year_end)) %>% 
+  select(Periodo, Formación) %>% 
+  kable()
+```
+
+# Experiencia Laboral {.work}
+```{r}
+cv_data %>% 
+  filter(type == 'work' & professional_1_page == 'y') %>% 
+  mutate(Cargo = str_c(what, ", ", where, "<br>", additional_info, "<br>")) %>% 
+  mutate(Periodo = ifelse(!is.na(year_end), str_c(year_begin, " --- ", year_end), year_begin)) %>% 
+  select(Periodo, Cargo) %>% 
+  kable()
+```
+
+<!--mutate(Cargo = str_c("<span class='work-title'>", what, "</span><br class='work-break '>", where, "<br>", additional_info, "<br><br>")) %>%  -->
+</div>
+
+<div class="col-4 aside">
+# {.summary}
+<div class="pieContainer">
+  <div class="pieBackground"></div>
+  <div id="pieSlice1" class="hold"><div class="pie"></div></div>
+  <div class="innerCircle"><div class="content"><img src="./Imgs/wallas.jpg" class="rounded-image" /></div></div>
+</div>
+
+Soy una persona creativa, responsable, comprometida con mis labores y mi formación profesional, preocupado por la innovación en pro del desarrollo y mejoramiento continuo. 
+
+Contact Info {#contact}
+-----------------------
+|  |  |
+|------:|:-----|
+|<i class="fas fa-mobile-alt"></i>    |(+57) 323 415 7471|
+|<i class="fab fa-whatsapp"></i>      | (+57) 301 607 2573|
+|<i class="fas fa-map-marker-alt"></i>| Conjunto Residencial <br> Coomultrasan Provenza <br> Torre 6A Apto 301|
+|<i class="fa fa-envelope"></i>       | william.trigos@gmail.com |
+|<i class="fas fa-globe"></i>         | [williamtrigos](https://sites.google.com/site/williamtrigos/)|
+|<i class="fab fa-github"></i>        | [wkrea](https://github.com/wkrea) |
+|<i class="fab fa-bitbucket"></i>     | [wkrea](https://github.com/malliwi88) |
+|<i class="fab fa-youtube"></i>       | [william.trigos](https://www.youtube.com/channel/UCxWnKOtL8QKvT0p90hXuKJw) |
+|<i class="fab fa-researchgate"></i>  | [William_Trigos_G](https://www.researchgate.net/profile/William_Trigos_G) |
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+<!--This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).-->
+</div>
+
+
+<!-- here starts the second page -->
+<br class="pageBreak" />
+<div class="row pagetwo">
+<div class="col-8">
+
+# Desarrollo de Software {.cv-table .nohead .vertical-top}
+```{r}
+cv_data %>% 
+  filter(type == 'programming') %>% 
+  replace_na(list(where = "", additional_info = "")) %>% 
+  mutate(Periodo = ifelse(!is.na(year_end), str_c(year_begin, " --- ", year_end), year_begin)) %>% 
+  mutate(Producto = str_c(what, ", ", where, "<br>", additional_info)) %>% 
+  select(Periodo, Producto) %>% 
+  arrange(desc(Periodo)) %>% 
+  kable()
+```
+
+# Ponencias {.Events}
+```{r}
+cv_data %>% 
+  filter(type == 'event') %>% 
+  mutate(Año = str_c(year_begin)) %>% 
+  mutate(Evento = str_c(what, ", ", where)) %>% 
+  select(Año, Evento) %>% 
+  kable()
+```
+
+# Producción Intelectual {.publicaciones}
+```{r}
+cv_data %>% 
+  filter(type == 'publications') %>% 
+  mutate(Año = str_c(year_begin)) %>% 
+  mutate(Producto = str_c(what, ", ", where)) %>% 
+  select(Año, Producto) %>% 
+  kable()
+```
+</div>
+<div class="col-4 aside">
+dfsd
+</div>
+</div>
+

@@ -1,0 +1,244 @@
+---
+name: William J. Trigos G.
+author: William Trigos
+address: |
+        Conjunto Residencial
+        Coomultrasan Provenza\ 
+        Bloque 6A Apto 301
+phone: (+57)323 415 7471 -- (+57)323 415 7471
+profilepic: ./Imgs/mariecurie.jpg
+www: wkrea.github.io
+email: "william.trigos@gmail.com"
+github: malliwi88
+linkedin: william-trigos-81526260
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Soy una persona creativa, responsable, comprometida con mis labores y mi formación profesional, preocupado por la innovación en pro del desarrollo y mejoramiento continuo. \n En cuanto a mis aptitudes profesionales, tengo un buen nivel en cuanto al manejo de herramientas ofimáticas y algunos lenguajes de programación y modelado."
+header-includes:
+  - \usepackage{titling}
+  - \pretitle{\begin{flushleft}}
+  - \posttitle{\end{flushleft}}
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+---
+
+Aside
+================================================================================
+
+
+![William J. Trigos G.](./Imgs/mariecurie.jpg){width=80%}
+
+Soy una persona creativa, responsable, comprometida con mis labores y mi formación profesional, preocupado por la innovación en pro del desarrollo y mejoramiento continuo. \n En cuanto a mis aptitudes profesionales, tengo un buen nivel en cuanto al manejo de herramientas ofimáticas y algunos lenguajes de programación y modelado.
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> scottericr@gmail.com
+- <i class="fa fa-github"></i> [github.com/aariq](https://github.com/aariq)
+- <i class="fa fa-phone"></i> +1 925-788-9855
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- Multivariate data analysis
+
+- Expert in R and R Studio with emphasis on the Tidyverse.
+
+- Expert in communicating to scientific and general public
+
+- Webscraping and data wrangling
+
+- Package development
+
+- Github
+
+- Some Python and SQL
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+<!--This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).-->
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Eric R. Scott {#title}
+--------------------------------------------------------------------------------
+
+### Eco-metabolomics, multivariate statistics, teaching
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### Tufts University
+
+PhD Candidate in Biology
+
+Medford, MA
+
+2014--2019
+
+Dissertation: Indirect and Interactive Impacts of Climate Change on Tea (*Camellia sinensis*) Metabolites and Quality.
+
+### University of Illinois at Urbana-Champaign
+
+M.S. in Ecology, Evolution, and Conservation Biology
+
+Urbana, IL
+
+2007--2010
+
+<!-- Thesis: Interactions between habitat and ungulate herbivory limit the spread of *Ipomopsis aggregata* (polemoniaceae) -->
+
+
+### Whitman College
+
+B.A. in Biology
+
+Walla Walla, WA
+
+2002--2006
+
+<!-- Thesis: Behavioral Evidence for Host-Race Formation in the Gall-Midge *Dasineura folliculi* (Felt) -->
+
+Research Experience {data-icon=flask}
+--------------------------------------------------------------------------------
+
+### Graduate Research Assistant
+
+Tufts University
+
+Medford, MA
+
+2014--2019
+
+- Designed and carried out multiple field experiments in China and the US
+- Developed a strong understanding of multivariate approaches to analyzing metabolomics datasets
+- Provided statistics consulting to Tufts researchers
+
+### Graduate Research Assistant
+
+University of Illinois at Urbana-Champaign
+
+Urbana, IL
+
+2007--2010
+
+- Designed and conducted a multi-year field experiment
+- Analyzed data using generalized linear models and mixed effects models
+
+Selected Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+### Biostatistics using R
+
+Tufts University
+
+Medford, MA
+
+2016--2018
+
+<!--::: concise-->
+- Created companion [recitation section](https://github.com/Aariq/biotstatistics-recitation-2018) to Biostatistics course to teach introductory R with a focus on the Tidyverse
+- Converted homework assignments from SPSS to R, making use of R Markdown documents
+<!--:::-->
+
+### Reproducible Workflows for Ecology Research 
+
+Workshop presented at Tufts University
+
+Medford, MA
+
+Oct 2018
+
+
+- Developed [workshop](https://github.com/Aariq/Reproducibility-ERGO) on reproducibility in data analysis for ecologists
+- Demonstrated use of R projects, project organization, authoring R packages, GitHub, and data archiving
+
+
+
+### R Notebooks: Richly annotate your statistical analyses and produce dynamic reports
+
+Workshop presented at Tufts University
+
+Medford, MA
+
+Jan 2018
+
+- Demonstrated uses of R Notebooks for biological research
+- Discussed value of readable, annotated code for reproducibility and collaboration
+
+
+
+Selected Presentations {data-icon=comment-alt}
+--------------------------------------------------------------------------------
+
+### Can pests rescue tea quality from climate change?
+First place winning talk for Entomological Society of America Joint Meeting, Plant-Insect Ecosystems student competition
+
+Vancouver, BC
+
+Nov 2018
+
+**ER Scott**, CM Orians
+
+### Generating and analyzing metabolomic data from tea plant volatiles
+
+Poster for Data Intensive Studies Center (DISC) Symposium at Tufts University
+
+Medford, MA
+
+Aug 2017
+
+**ER Scott**, N Kfoury
+
+Selected Publications {data-icon=file}
+--------------------------------------------------------------------------------
+
+### Combined impacts of prolonged drought and warming on plant size and foliar chemistry
+
+Ann. Bot. (2019). doi:10.1093/aob/mcz004
+
+N/A
+
+2019
+
+CM Orians, R Schweiger, J Dukes, **ER Scott**, C Müller
+
+### Interactive effects of drought severity and simulated herbivory on tea (Camellia sinensis) volatile and non-volatile metabolites
+
+Environ. Exp. Bot. 157, 283–292 (2019). doi:10.1016/j.envexpbot.2018.10.025
+
+N/A
+
+2019
+
+ **ER Scott**, X Li, N Kfoury, J Morimoto, WY Han, S Ahmed, SB Cash, TS Griffin, JR Stepp, A Robbat, CM Orians
+ 
+### Striking changes in tea metabolites due to elevational effects
+
+Food Chem. 264, 334–341 (2018). doi:10.1007/978-981-13-2140-5
+
+N/A
+
+2018
+
+N Kfoury, J Morimoto, A Kern, **ER Scott**, CM Orians, S Ahmed, TS Griffin, SB Cash, JR Stepp, D-Y Xue, C-L Long, A Robbat
+
+### Direct Contact Sorptive Extraction: A Robust Method for Sampling Plant Volatiles in the Field
+
+J. Agric. Food Chem. 65, 8501–8509 (2017). doi:10.1016/j.foodchem.2018.05.040
+
+N/A
+
+2017
+
+N Kfoury, **ER Scott**, CM Orians, A Robbat 
